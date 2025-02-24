@@ -1,37 +1,19 @@
 {
-    "$schema": "https://raw.githubusercontent.com/FLECS-Technologies/app-sdk/main/manifest.schema.json",
+    "$schema": "https://raw.githubusercontent.com/FLECS-Technologies/app-manifest/2.x/manifest.schema.json",
     "_schemaVersion": "2.0.0",
-    "app": "",
+    "app": "org.mongodb.mongo",
     "version": "##VERSION##",
     "revision": "0",
-    "image": "flecs.azurecr.io/",
-    "multiInstance": false,
-    "editor": "",
-    "args": [
-        "--launch-arg-1",
-        "--launch-arg-2=8000"
-    ],
-    "capabilities": [],
+    "image": "flecs.azurecr.io/org.mongodb.mongo",
+    "multiInstance": true,
     "conffiles": [
-        "default.conf:/etc/my-app/default.conf",
-        "default.conf:/etc/my-app/default.conf:ro",
-        "default.conf:/etc/my-app/default.conf:rw"
-    ],
-    "devices": [
-        "/dev/net/tun"
+        "mongod.conf:/etc/mongo/mongod.conf"
     ],
     "env": [
-        "MY_ENV=value"
-    ],
-    "ports": [
-        "12345:12345"
+        "MONGO_INITDB_ROOT_USERNAME=root",
+        "MONGO_INITDB_ROOT_PASSWORD=example"
     ],
     "volumes": [
-        "my-app-etc:/etc/my-app",
-        "/var/lib/my-app:/var/lib/my-app"
-    ],
-    "labels": [
-        "org.my.label",
-        "org.my.label-with-value=Some custom label value"
+        "db:/data/db"
     ]
 }

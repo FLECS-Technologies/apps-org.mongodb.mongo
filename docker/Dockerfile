@@ -1,8 +1,11 @@
+#
+# Copyright 2025 FLECS Technologies GmbH
+
 ARG ARCH
 ARG VERSION
 ARG VARIANT
 
-FROM scratch:${VERSION}
+FROM mongo:${VERSION}
 
 ARG ARCH
 ARG VERSION
