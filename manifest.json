@@ -6,9 +6,6 @@
     "revision": "0",
     "image": "flecs.azurecr.io/org.mongodb.mongo",
     "multiInstance": true,
-    "conffiles": [
-        "mongod.conf:/etc/mongo/mongod.conf"
-    ],
     "env": [
         "MONGO_INITDB_ROOT_USERNAME=root",
         "MONGO_INITDB_ROOT_PASSWORD=example"
